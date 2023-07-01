@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject IChangeEmployeeState? _ChangeEmployeeState
+<input type="text" @bind="name" class="form-control mb-3 w-50" />
+<button class="btn btn-primary" @onclick="ChangTittle">Change</button>
+
+
+@code {
+
+    private string? name = null;
+    private void ChangTittle()
+    {
+        _ChangeEmployeeState.ChangeState(name);
+    }
+
+}
